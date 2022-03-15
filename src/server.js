@@ -1,6 +1,7 @@
 "use strict";
 const express = require("express");
 const cors = require("cors");
+require("dotenv").config();
 const errorhandler = require("./error-handler-mid/500");
 const notFound = require("./error-handler-mid/404");
 
@@ -24,7 +25,7 @@ app.get("/users", bearerAuth, async (req, res) => {
 
 function start(port) {
   app.listen(port, () => {
-    console.log(`server is running on port ${port}`);
+    console.log("server is running on port " + process.env.PORT);
   });
 }
 

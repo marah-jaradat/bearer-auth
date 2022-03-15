@@ -10,5 +10,5 @@ const app = express();
 app.use(express.json());
 
 db.sync().then(() => {
-  server.start(process.env.PORT || 3001);
+  server.start(process.env.PORT || 3003);
 });
