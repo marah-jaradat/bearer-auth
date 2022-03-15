@@ -10,7 +10,7 @@ At this point, our auth-server is able to allow a user to create an account as w
    [Actions](https://github.com/marah-jaradat/bearer-auth/actions)
 
 **2. The Pull request:**
-   [pull request](https://github.com/marah-jaradat/bearer-auth/pull/1)
+   [pull request](https://github.com/marah-jaradat/bearer-auth/pull/4)
 
 **3. Heroku link**
     [deploy-main](https://auth-server-marah.herokuapp.com/)
