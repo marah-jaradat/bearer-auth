@@ -1,13 +1,10 @@
 "use strict";
-
 const { Sequelize, DataTypes } = require("sequelize");
-
+const user = require("./users-model");
 require("dotenv").config();
 
-const Users = require("./users-model");
-
-const DATABASE_URL =
-  process.env.NODE_ENV == "test" ? "sqlite:memory" : process.env.DATABASE_URL;
+const myPOSTGRES_URL =
+  process.env.NODE_ENV === "test" ? "sqlite:memory:" : process.env.DATABASE_URL;
 
 let sequelizeOptions =
   process.env.NODE_ENV === "production"
@@ -21,9 +18,9 @@ let sequelizeOptions =
       }
     : {};
 
-const sequelize = new Sequelize(DATABASE_URL, sequelizeOptions);
+let sequelize = new Sequelize(myPOSTGRES_URL, sequelizeOptions);
 
 module.exports = {
   db: sequelize,
-  Users: Users(sequelize, DataTypes),
+  user: user(sequelize, DataTypes),
 };
