@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 
 const SECRET = process.env.SECRET;
 
-const Users = (sequelize, DataTypes) =>
+const user = (sequelize, DataTypes) =>
   sequelize.define("user", {
     username: {
       type: DataTypes.STRING,
@@ -19,9 +19,9 @@ const Users = (sequelize, DataTypes) =>
     token: {
       type: DataTypes.VIRTUAL,
       get() {
-        return JWT.sign({ username: this.username }, SECRET);
+        return jwt.sign({ username: this.username }, SECRET);
       },
     },
   });
 
-module.exports = Users;
+module.exports = user;
